@@ -1,11 +1,13 @@
-print('hello from master')
+from flask import Flask
 
 
-def new_master_feature(): ...
+app = Flask(__name__)
 
 
-def yet_another_master_feature(): ...
+@app.route('/')
+def hello_geek():
+    return '<h1>Hello from Flask & Docker</h2>'
 
 
-def add_new_feature():
-    print('even more new feature modification')
+if __name__ == "__main__":
+    app.run(debug=True)
